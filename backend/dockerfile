@@ -1,0 +1,12 @@
+FROM node:alpine
+
+RUN mkdir -p /usr/src/app
+COPY tsconfig.json /usr/src/app
+COPY tsconfig.build.json /usr/src/app
+WORKDIR usr/src/app
+
+COPY package.json /usr/src/app
+RUN yarn install --prod
+COPY . /usr/src/app
+RUN yarn build
+COPY .env dist/.env

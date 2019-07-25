@@ -1,0 +1,25 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: dockerfile
+    command: node ./dist/src/main.js
+    depends_on:
+      - postgres
+    volumes:
+      - .:/src
+      - /node_modules
+    ports:
+      - 5000:5000
+    links:
+      - postgres
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: '${TYPEORM_PASSWORD}'
+      POSTGRES_USER: '${TYPEORM_USERNAME}'
+      POSTGRES_DB: '${TYPEORM_DATABASE}'
+      DB_HOST: '${TYPEORM_HOST}'
+    ports:
+      - 5432:5432
