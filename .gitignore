@@ -67,5 +67,3 @@ typings/
 dist
 
 package-lock.json
-
-packages/*/**/*.js
