@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "backend",
+    "webapp"
+  ],
+  "useWorkspaces": true,
+  "version": "0.0.0",
+  "npmClient": "yarn"
+}

@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "webapp",
+      "backend"
+    ]
+  },
+  "name": "booknet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kaeltran16/booknet.git",
+  "author": "Kael <piskael03@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently --kill-others \"lerna run start --stream --scope @booknet/backend\" \"lerna run start --stream --scope @booknet/webapp\"",
+    "dev": "concurrently --kill-others \"lerna run start:dev --stream --scope @booknet/backend\" \"lerna run start --stream --scope @booknet/webapp\"",
+    "lerna": "lerna",
+    "start-with-docker": "concurrently --kill-others \"lerna run start-with-docker --stream --scope @booknet/backend\" \"yarn run start\"",
+    "lint": "tslint --fix --exclude packages/*/node_modules/**/*.ts --project tsconfig.json",
+    "prettier:fix": "prettier --write",
+    "graphql-codegen": "graphql-codegen",
+    "gen": "graphql-codegen --config codegen.yml",
+    "docker": "lerna run docker-up --stream --scope @booknet/backend"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "husky": "^3.0.0",
+    "lerna": "^3.15.0",
+    "lint-staged": "^9.2.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  }
+}
