@@ -9,6 +9,7 @@ services:
 env:
   - DOCKER_COMPOSE_VERSION=1.23.2
 
+
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.17.3
   - export PATH="$HOME/.yarn/bin:$PATH"
@@ -21,6 +22,7 @@ before_install:
 install:
   - yarn global add lerna
   - lerna bootstrap
+  - yarn build-backend
 
 script:
   - yarn docker

@@ -6,15 +6,12 @@
     "experimentalDecorators": true,
     "target": "es6",
     "sourceMap": true,
-    "outDir": "./dist",
     "esModuleInterop": true,
     "baseUrl": "./",
     "incremental": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": false,
-    "noImplicitAny": false
-  },
-  "exclude": [
-    "node_modules"
-  ]
+    "noImplicitAny": false,
+    "types": []
+  }
 }

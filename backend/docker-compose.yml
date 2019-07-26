@@ -3,7 +3,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     command: node ./dist/src/main.js
     depends_on:
       - postgres
@@ -22,4 +22,4 @@ services:
       POSTGRES_DB: '${TYPEORM_DATABASE}'
       DB_HOST: '${TYPEORM_HOST}'
     ports:
-      - 5432
+      - 5432:5432

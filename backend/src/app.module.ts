@@ -29,7 +29,7 @@ const errorFormatter = (error: GraphQLError): GraphQLFormattedError => {
 	]
 })
 export class AppModule {
-
+x
 	constructor() {
 	}
 }
