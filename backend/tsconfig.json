@@ -1,20 +1,14 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
     "outDir": "./dist",
-    "esModuleInterop": true,
-    "baseUrl": "./",
-    "incremental": true,
-    "allowSyntheticDefaultImports": true,
-    "isolatedModules": false,
-    "noImplicitAny": false
+    "skipDefaultLibCheck": true
   },
+  "include": [
+    "src/*.ts"
+  ],
+  "extends": "../tsconfig.json",
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }

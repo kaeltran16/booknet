@@ -17,6 +17,9 @@
     "noEmit": true,
     "isolatedModules": true
   },
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
     "src"
   ]

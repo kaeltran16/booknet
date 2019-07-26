@@ -21,7 +21,8 @@
     "prettier:fix": "prettier --write",
     "graphql-codegen": "graphql-codegen",
     "gen": "graphql-codegen --config codegen.yml",
-    "docker": "lerna run docker-up --stream --scope @booknet/backend"
+    "docker": "lerna run docker-up --stream --scope @booknet/backend",
+    "build-backend": "lerna run build --stream --scope @booknet/backend"
   },
   "devDependencies": {
     "concurrently": "^4.1.1",
